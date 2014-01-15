@@ -34,11 +34,15 @@
 
 		<style>
 			/* for demo purposes only */
+			.full,
 			.row {
 				margin-bottom: 2em;
 			}
 		</style>
 
+		<div class="full" style="background: rgba(255,60,200,0.25);">
+			<p>simple one element full width container<p>
+		</div>
 
 		<div class="row">
 			<div class="col-8-of-8" style="background: rgba(255,0,200,0.5);">
@@ -77,14 +81,14 @@
 		</div>
 
 		<div class="row">
-			<div class="col-8-of-16" style="background: rgba(255,0,200,0.5);">
-				<p>8 of 16<p>
+			<div class="col-8-of-16 col-4-of-8" style="background: rgba(255,0,200,0.5);">
+				<p>8 of 16 (or 4-of-8 in 8col grid)<p>
 			</div>
-			<div class="col-3-of-16" style="background: rgba(255,100,0,0.5);">
-				<p>3 of 16<p>
+			<div class="col-2-of-16 col-2-of-8" style="background: rgba(255,100,0,0.5);">
+				<p>2 of 16<br/> (or 2-of-8 in 8col grid)<p>
 			</div>
-			<div class="col-5-of-16" style="background: rgba(255,255,20,0.5);">
-				<p>5 of 16<p>
+			<div class="col-6-of-16 col-2-of-8" style="background: rgba(255,255,20,0.5);">
+				<p>6 of 16<br/> (or 2-of-8 in 8col grid)<p>
 			</div>
 		</div>
 
