@@ -134,6 +134,7 @@ h3 {
 //header, #twoway {
 .wrap {
 	margin: 0 $column;
+	padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
 }
 
 h1, h2 {
@@ -150,18 +151,24 @@ h3 {
 
 
 
-// Simple elastic gutters
+// Universal box-sizing: border-box;
 // ----------------------
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 // Note: box-sizing will not work in IE6-7
+//
+// box-sizing: border-box; required at least for .wrap class for elastic gutters to work
+// so if you wish to use the default box-sizing: content-box; then remember to leave border-box for .wrap
 
-//.wrapper {
-.wrap {
-	padding: 0 #{($line/2)/$em}em;
+//.wrap, // REQUIRES border-box!
+*, *:before, *:after {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	    -ms-box-sizing: border-box;
 			box-sizing: border-box;
 }
+
+
+
 
 
 
@@ -217,6 +224,19 @@ h3 {
 	//	float: left;
 	//	width: 50%;
 	//}
+
+	.cols-6-of-8 {
+		//padding: 0 #{($line/2)/$em}em;
+		//margin: 0 $column*3 0 -1*#{($line/2)/$em}em !important;
+		//margin: 0 !important;
+		//margin-left: #{($line/2)/$em*-1}em !important;
+		//margin-right: #{($line/2)/$em*-1 + $column*3}em !important;
+		//width: 100%/8*6;
+	}
+
+	.cols-7-of-8 {
+		//margin: 0 $column*12 0 0 !important;
+	}
 
 }
 
