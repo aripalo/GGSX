@@ -126,31 +126,6 @@ h3 {
 
 
 
-
-// Golden Grid System (GGS) splits the screen into 18 even columns.
-// The leftmost and rightmost columns are used as the outer margins of the grid, which leaves 16 columns for use in design.
-
-// Now, 16 columns sounds a bit much for anything other than huge widescreen monitors.
-// This is where the folding, inspired by the DIN paper system and Unigrid, comes in.
-// The 16 columns can be combined, or folded, into 8 columns for tablet-sized screens, and into 4 columns for mobile-sized ones.
-// This way GGS can easily cover any screen sizes from 240 up to 2560 pixels.
-
-
-// Four-column grid active
-// ----------------------------------------
-// Margin   | #  1   2   3   4   |   Margin
-// 5.55555% | %  25  50  75  100 | 5.55555%
-
-//header, #twoway {
-.cols-8-of-8,
-.wrap {
-	margin: 0 $column;
-	padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
-}
-
-
-
-
 // Universal box-sizing: border-box;
 // ----------------------
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
@@ -168,9 +143,6 @@ h3 {
 
 
 
-
-
-
 // Fixes for IE6-8
 // ---------------
 // http://jonikorpi.com/leaving-old-IE-behind/
@@ -185,6 +157,34 @@ h3 {
 	@include huge-type;
 	margin: (48/42*1em) 0 (24/42*1em);
 }
+
+
+
+// Golden Grid System (GGS) splits the screen into 18 even columns.
+// The leftmost and rightmost columns are used as the outer margins of the grid, which leaves 16 columns for use in design.
+
+// Now, 16 columns sounds a bit much for anything other than huge widescreen monitors.
+// This is where the folding, inspired by the DIN paper system and Unigrid, comes in.
+// The 16 columns can be combined, or folded, into 8 columns for tablet-sized screens, and into 4 columns for mobile-sized ones.
+// This way GGS can easily cover any screen sizes from 240 up to 2560 pixels.
+
+
+
+
+// Four-column grid active
+// by default without media query - this is mobile first!
+// ------------------------------------------------------
+// Margin   | #  1   2   3   4   |   Margin
+// 5.55555% | %  25  50  75  100 | 5.55555%
+
+//header, #twoway {
+.cols-8-of-8,
+.wrap {
+	margin: 0 $column;
+	padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
+}
+
+
 
 
 
