@@ -1,9 +1,9 @@
 /*
+*  https://github.com/jonikorpi/Golden-Grid-System/pull/19
+*  Golden Gridlet (1.02)  <http://goldengridsystem.com/>
+*  by Joni Korpi      <http://jonikorpi.com/>
+*  licensed under MIT     <http://opensource.org/licenses/mit-license.php>
 *
-*  Golden Gridlet (1.01) 	<http://goldengridsystem.com/>
-*  by Joni Korpi 			<http://jonikorpi.com/>
-*  licensed under MIT 		<http://opensource.org/licenses/mit-license.php>
-*	
 */
 
 var guideColor = 'rgb(255,195,0)';
@@ -20,9 +20,9 @@ var eightColBreakpoint = ((720-1) / baseFontSize)+'em';
 var sixteenColBreakpoint = ((1872-1) / baseFontSize)+'em';
 
 /*
-*  Note that the script might not work as expected if 
-*  the <body> element of your page has a set width and 
-*  position: relative;, because the guides are appended 
+*  Note that the script might not work as expected if
+*  the <body> element of your page has a set width and
+*  position: relative;, because the guides are appended
 *  inside <body>, but positioned in relation to <html>.
 *
 *  Also note that the baseline grid doesn't really align
@@ -43,41 +43,41 @@ var sixteenColBreakpoint = ((1872-1) / baseFontSize)+'em';
 var ender = $.noConflict();
 
 function setHeights() {
-	if (!ender('body').hasClass('ggs-hidden')) {
+  if (!ender('body').hasClass('ggs-hidden')) {
 /* Which one is taller, <body> or <html>? */
-		if (ender('body').offset().height > ender('html').offset().height) {
-			var largerHeight = ender('body').offset().height;
-		}
-		else {
-			var largerHeight = ender('html').offset().height;
-		}
+    if (ender('body').offset().height > ender('html').offset().height) {
+      var largerHeight = ender('body').offset().height;
+    }
+    else {
+      var largerHeight = ender('html').offset().height;
+    }
 
 /* Give guides the new height */
-		ender('.ggs-guide').each(function() {
-			ender(this).css('height', largerHeight);
-		});
+    ender('.ggs-guide').each(function() {
+      ender(this).css('height', largerHeight);
+    });
 
 /* Calculate the amount of lines needed and append them */
-		var lines = Math.floor(largerHeight/24);
-		ender('#ggs-baseline-container').empty();
-		for (i=0; i<=lines; i++) {
-			ender('#ggs-baseline-container').append('<div class="ggs-line"></div>');
-		}
+    var lines = Math.floor(largerHeight/24);
+    ender('#ggs-baseline-container').empty();
+    for (i=0; i<=lines; i++) {
+      ender('#ggs-baseline-container').append('<div class="ggs-line"></div>');
+    }
 
 /* Set the baseline container to the same height as the guides, so there's no overflow */
-		ender('#ggs-baseline-container').css('height', largerHeight);
-	}
+    ender('#ggs-baseline-container').css('height', largerHeight);
+  }
 }
 
 ender.domReady(function () {
-	
-/* 	Add control classes and switch element */
-	ender('body').addClass('ggs-hidden ggs-animated').append('<div id="ggs-switch"><div class="ggs-switchBar"></div><div class="ggs-switchBar"></div><div class="ggs-switchBar"></div></div>');
+
+/*  Add control classes and switch element */
+  ender('body').addClass('ggs-hidden ggs-animated').append('<div id="ggs-switch"><div class="ggs-switchBar"></div><div class="ggs-switchBar"></div><div class="ggs-switchBar"></div></div>');
 
 /*  Create CSS */
     var styles = '\
         html{height:100%;position:relative;}\
-        #ggs-switch{position:fixed;top:0;right:0;z-index:9500; cursor:pointer; width: 24px; padding: 18px 18px 14px; opacity:'+switchOpacity+'; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transition: all 0.145s ease-out; -moz-transition: all 0.145s ease-out; -ms-transition: all 0.145s ease-out; transition: all 0.145s ease-out;}\
+        #ggs-switch{position:fixed;top:0;right:0;z-index:9500; cursor:pointer; width: 24px; margin: 18px 18px 14px; opacity:'+switchOpacity+'; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transition: all 0.145s ease-out; -moz-transition: all 0.145s ease-out; -ms-transition: all 0.145s ease-out; transition: all 0.145s ease-out;}\
         .ggs-switchBar {background: '+switchColor+'; height: 4px; margin-bottom: 4px;}\
         .ggs-animated #ggs-switch {-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg);}\
         .ggs-guide{position:absolute;top:0;z-index:9000;height:100%;margin-left:-0.75em;border:solid '+guideColor+';border-width:0 0.75em;background:'+guideColor+';opacity:'+guideOpacity+'; -webkit-transition: all 0.235s ease-out; -moz-transition: all 0.235s ease-out; -ms-transition: all 0.235s ease-out; transition: all 0.235s ease-out;}\
@@ -101,7 +101,7 @@ ender.domReady(function () {
         .ggs-14{left:83.33333333333333%;}\
         .ggs-15{left:88.88888888888889%;}\
         .ggs-16{right:0;}\
-        .ggs-0,.ggs-16{width:5.555555555555555%;padding-right:0.75em;border:0;margin:0;}\
+        .ggs-0,.ggs-16{width:5.555555555555555%;padding-right:0.75em;border:0;margin:0;-moz-box-size:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}\
         .ggs-guide div{background:'+guideInnerColor+';width:2px;height:100%;position:absolute;left:-1px;top:0;}\
         .ggs-0 div{left:auto;right:0.75em;}\
         .ggs-16 div{left:0.75em;}\
@@ -109,51 +109,51 @@ ender.domReady(function () {
         .ggs-line {border-top: 1px dotted '+guideColor+'; height: '+baselineGridHeight+'; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box;}\
         @media screen and (max-width: '+(eightColBreakpoint)+'){.ggs-2,.ggs-6,.ggs-10,.ggs-14{display:none;}}\
         @media screen and (max-width: '+(sixteenColBreakpoint)+'){.ggs-1,.ggs-3,.ggs-5,.ggs-7,.ggs-9,.ggs-11,.ggs-13,.ggs-15{display:none;}}\
-    ';	
+    ';
 
-/* 	Create guides */
-	for (i=0; i<=16; i++) {
-		ender('body').append(ender('<div class="ggs-guide ggs-'+i+'"><div></div></div>'));
-	};
-	ender('body').append(ender('<div id="ggs-baseline-container"></div>'));
-	
-/* 	Append CSS */
-	(function(d,u) {
-		if(d.createStyleSheet) {
-			d.createStyleSheet( u );
-		} 
-		else {
-			var css=d.createElement('style');
-			css.setAttribute("type","text/css");
-			css.appendChild(document.createTextNode(u));
-			d.getElementsByTagName("head")[0].appendChild(css);
-		}
-	}(document, styles))
-	
-/* 	Resize guides when window size changes */
-	ender(window).on('resize', setHeights);
-	
-/* 	Add listeners for switch element */
-	ender('#ggs-switch').click(function(){
-		if (ender('body').hasClass('ggs-hidden')) {
-			ender('body').removeClass('ggs-hidden');
-			setHeights();
-			setTimeout(
-				function () {
-					ender('body').removeClass('ggs-animated');
-				},
-				20
-			);
-		}
-		else {
-			ender('body').addClass('ggs-animated');
-			setTimeout(
-				function () {
-					ender('body').addClass('ggs-hidden');
-				},
-				300
-			);
-		}
-	});
-	
+/*  Create guides */
+  for (i=0; i<=16; i++) {
+    ender('body').append(ender('<div class="ggs-guide ggs-'+i+'"><div></div></div>'));
+  };
+  ender('body').append(ender('<div id="ggs-baseline-container"></div>'));
+
+/*  Append CSS */
+  (function(d,u) {
+    if(d.createStyleSheet) {
+      d.createStyleSheet( u );
+    }
+    else {
+      var css=d.createElement('style');
+      css.setAttribute("type","text/css");
+      css.appendChild(document.createTextNode(u));
+      d.getElementsByTagName("head")[0].appendChild(css);
+    }
+  }(document, styles))
+
+/*  Resize guides when window size changes */
+  ender(window).on('resize', setHeights);
+
+/*  Add listeners for switch element */
+  ender('#ggs-switch').click(function(){
+    if (ender('body').hasClass('ggs-hidden')) {
+      ender('body').removeClass('ggs-hidden');
+      setHeights();
+      setTimeout(
+        function () {
+          ender('body').removeClass('ggs-animated');
+        },
+        20
+      );
+    }
+    else {
+      ender('body').addClass('ggs-animated');
+      setTimeout(
+        function () {
+          ender('body').addClass('ggs-hidden');
+        },
+        300
+      );
+    }
+  });
+
 });
