@@ -29,6 +29,9 @@ See http://goldengridsystem.com/ for more details.
 ## Credits
 
 
-Original Golden Grid System Developed by [Joni Korpi](http://jonikorpi.com/) / [@jonikorpi](http://twitter.com/jonikorpi/). Licensed under [MIT](http://opensource.org/licenses/mit-license.php).
-
+Original Golden Grid System Developed by [Joni Korpi](http://jonikorpi.com/) / [@jonikorpi](http://twitter.com/jonikorpi/).
 Golden Grid System Extended by [Ari Palo](http://aripalo.fi/) / [@aripalo](http://twitter.com/aripalo/).
+
+
+## License
+Licensed under [MIT](http://opensource.org/licenses/mit-license.php).
