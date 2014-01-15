@@ -177,14 +177,26 @@ h3 {
 // Margin   | #  1   2   3   4   |   Margin
 // 5.55555% | %  25  50  75  100 | 5.55555%
 
-//header, #twoway {
+
+
+
+.row,
 .cols-8-of-8,
+.cols-16-of-16,
 .wrap {
 	margin: 0 $column;
+}
+
+.cols-8-of-8,
+.cols-16-of-16,
+.wrap,
+.row > .col {
 	padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
 }
 
-
+.row > .col {
+	margin: 0;
+}
 
 
 
@@ -225,14 +237,6 @@ h3 {
 	//}
 
 	.row {
-		margin: 0 $column;
-	}
-
-	.row {
-		.col {
-			margin: 0;
-			padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
-		}
 		.cols-6-of-8 {
 			float: left;
 			width: 75%;
@@ -320,6 +324,17 @@ h3 {
 
 // @media screen and (min-width: 1872px)
 @media screen and (min-width: 117em) {
+
+	.row {
+		.cols-10-of-16 {
+			float: left;
+			width: 62.5%;
+		}
+		.cols-6-of-16 {
+			float: left;
+			width: 37.5%;
+		}
+	}
 
 	//header, #twoway {
 	//	margin: 0 $column*1;
