@@ -183,7 +183,6 @@ h3 {
 }
 
 @mixin col($num, $max) {
-	@include elasticGutters;
 	float: left;
 	width: $num/$max*100%;
 }
@@ -208,6 +207,12 @@ h3 {
 .row {
 	@include row;
 }
+
+[class^=col] {
+	@include elasticGutters;
+}
+
+@include generateColumns(4);
 
 
 // @media screen and (min-width: 640px)
