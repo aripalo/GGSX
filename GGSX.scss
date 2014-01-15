@@ -99,21 +99,31 @@ img {
 
 
 
-// Set up type sizes
-// -----------------
+// Typography
+// ----------
 
 body {
 	@include normal-type;
 }
 
-h1,
+h1 {
+	@include large-type;
+	margin: (24/26*1em) 0 (36/26*1em);
+}
+
 h2 {
 	@include large-type;
+	margin: (24/26*1em) 0 (36/26*1em);
+	font-weight: normal;
 }
 
 h3 {
 	@include normal-type;
+	margin: #{24/$em}em 0 #{24/$em}em;
 }
+
+
+
 
 
 
@@ -138,17 +148,6 @@ h3 {
 	padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
 }
 
-h1, h2 {
-	margin: (24/26*1em) 0 (36/26*1em);
-}
-
-h2 {
-	font-weight: normal;
-}
-
-h3 {
-	margin: #{24/$em}em 0 #{24/$em}em;
-}
 
 
 
@@ -160,8 +159,7 @@ h3 {
 // box-sizing: border-box; required at least for .wrap class for elastic gutters to work
 // so if you wish to use the default box-sizing: content-box; then remember to leave border-box for .wrap
 
-//.wrap, // REQUIRES border-box!
-*, *:before, *:after {
+.wrap, *, *:before, *:after {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	    -ms-box-sizing: border-box;
