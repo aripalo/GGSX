@@ -124,13 +124,13 @@ h3 {
 // ---------------
 // http://jonikorpi.com/leaving-old-IE-behind/
 
-.ie body {
+.oldie body {
 	width: #{640/$em}em;
 	margin: 0 auto;
 	font-size: #{($font-size + 1) / $em}em;
 }
 
-.ie h1 {
+.oldie h1 {
 	@include huge-type;
 	margin: (48/42*1em) 0 (24/42*1em);
 }
