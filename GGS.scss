@@ -12,17 +12,19 @@
 
 // Important numbers
 // -----------------
-
 $line: 24;
 $column: 100% / 18;
 $font-size: 16;
 $em: $font-size * 1;
 
 
+
 // Import Normalize.css
 // --------------------
 // (via _normalize.scss symlink pointint to normalize.css git submodule)
+
 @import 'normalize';
+
 
 
 // Margin, padding, and border resets
@@ -38,23 +40,27 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote,
 
 
 // Simple fluid media
-// ----------------------------------
+// ------------------
 
 figure {
 	position: relative;
 }
+
 figure img, figure object, figure embed, figure video {
 	max-width: 100%;
 	display: block;
 }
+
 img {
 	border: 0;
 	-ms-interpolation-mode: bicubic;
 }
 
 
+
 // Type size mixins
-// ----------------------------------
+// ----------------
+
 @mixin small-type {
 	// 13px / 18px
 	font-size: #{($font-size*0.8125) / $em}em;
@@ -92,9 +98,9 @@ img {
 }
 
 
-// Zoomable baseline grid
-// type size presets
-// ----------------------------------
+
+// Set up type sizes
+// -----------------
 
 body {
 	@include normal-type;
@@ -111,8 +117,6 @@ h3 {
 
 
 
-
-
 // Golden Grid System (GGS) splits the screen into 18 even columns.
 // The leftmost and rightmost columns are used as the outer margins of the grid, which leaves 16 columns for use in design.
 
@@ -122,15 +126,10 @@ h3 {
 // This way GGS can easily cover any screen sizes from 240 up to 2560 pixels.
 
 
-
-
-
-//
-//  Four-column grid active
-//  ----------------------------------------
-//  Margin   | #  1   2   3   4   |   Margin
-//  5.55555% | %  25  50  75  100 | 5.55555%
-//
+// Four-column grid active
+// ----------------------------------------
+// Margin   | #  1   2   3   4   |   Margin
+// 5.55555% | %  25  50  75  100 | 5.55555%
 
 header, #twoway {
 	margin: 0 $column;
@@ -148,9 +147,10 @@ h3 {
 	margin: #{24/$em}em 0 #{24/$em}em;
 }
 
-//
+
+
 // Simple elastic gutters
-// ----------------------------------
+// ----------------------
 // Note: box-sizing will not work in IE6-7
 
 .wrapper {
@@ -162,10 +162,10 @@ h3 {
 }
 
 
-//
-//  Fixes for IE6-8
-//  ----------------------------------
-//  http://jonikorpi.com/leaving-old-IE-behind/
+
+// Fixes for IE6-8
+// ---------------
+// http://jonikorpi.com/leaving-old-IE-behind/
 
 .ie body {
 	width: #{640/$em}em;
@@ -179,8 +179,6 @@ h3 {
 }
 
 
-// Breakpoint
-// ----------------------------------
 
 // @media screen and (min-width: 640px)
 @media screen and (min-width: 40em) {
@@ -198,15 +196,12 @@ h3 {
 }
 
 
-//
-//
-//  Eight-column grid active
-//  ----------------------------------------------------------------------
-//  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
-//  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
-//
-//
-//
+
+// Eight-column grid active
+// ----------------------------------------------------------------------
+// Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+// 5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+
 
 // @media screen and (min-width: 720px)
 @media screen and (min-width: 45em) {
@@ -286,15 +281,12 @@ h3 {
 }
 
 
-//
-//
-//  Sixteen-column grid active
-//  ----------------------------------------------------------------------------------------------------------------------
-//  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
-//  5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
-//
-//
-//
+
+// Sixteen-column grid active
+// ----------------------------------------------------------------------------------------------------------------------
+// Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
+// 5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
+
 
 // @media screen and (min-width: 1872px)
 @media screen and (min-width: 117em) {
