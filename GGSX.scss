@@ -168,16 +168,8 @@ h3 {
 // The 16 columns can be combined, or folded, into 8 columns for tablet-sized screens, and into 4 columns for mobile-sized ones.
 // This way GGS can easily cover any screen sizes from 240 up to 2560 pixels.
 
-
-
-
-// Four-column grid active
-// by default without media query - this is mobile first!
-// ------------------------------------------------------
-// Margin   | #  1   2   3   4   |   Margin
-// 5.55555% | %  25  50  75  100 | 5.55555%
-
-
+// Mixins for grid creation
+// ------------------------
 @mixin row {
 	margin: 0 $column;
 }
@@ -188,33 +180,6 @@ h3 {
 
 @mixin rowcol {
 	margin: 0;
-}
-
-/*
-.row,
-.cols-8-of-8,
-.cols-16-of-16,
-.wrap {
-	@include row;
-}
-
-
-.cols-8-of-8,
-.cols-16-of-16,
-.wrap,
-.row > .col {
-	@include elasticGutters;
-}
-
-
-.row > .col {
-	@include rowcol;
-}
-*/
-
-
-.row {
-	@include row;
 }
 
 @mixin col($num, $max) {
@@ -232,6 +197,17 @@ h3 {
 }
 
 
+
+// Four-column grid active
+// by default without media query - this is mobile first!
+// ------------------------------------------------------
+// Margin   | #  1   2   3   4   |   Margin
+// 5.55555% | %  25  50  75  100 | 5.55555%
+
+
+.row {
+	@include row;
+}
 
 
 // @media screen and (min-width: 640px)
