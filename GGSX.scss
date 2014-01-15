@@ -131,7 +131,8 @@ h3 {
 // Margin   | #  1   2   3   4   |   Margin
 // 5.55555% | %  25  50  75  100 | 5.55555%
 
-header, #twoway {
+//header, #twoway {
+.wrap {
 	margin: 0 $column;
 }
 
@@ -153,7 +154,8 @@ h3 {
 // ----------------------
 // Note: box-sizing will not work in IE6-7
 
-.wrapper {
+//.wrapper {
+.wrap {
 	padding: 0 #{($line/2)/$em}em;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -211,10 +213,10 @@ h3 {
 		font-size: #{($font-size) / $em}em;
 	}
 
-	#twoway .wrapper {
-		float: left;
-		width: 50%;
-	}
+	//#twoway .wrapper {
+	//	float: left;
+	//	width: 50%;
+	//}
 
 }
 
@@ -237,9 +239,9 @@ h3 {
 		font-size: #{($font-size) / $em}em;
 	}
 
-	header, #twoway {
-		margin: 0 $column*3;
-	}
+	//header, #twoway {
+	//	margin: 0 $column*3;
+	//}
 
 }
 
@@ -263,9 +265,9 @@ h3 {
 		font-size: #{($font-size) / $em}em;
 	}
 
-	header, #twoway {
-		margin: 0 $column*5;
-	}
+	//header, #twoway {
+	//	margin: 0 $column*5;
+	//}
 
 }
 
@@ -291,22 +293,22 @@ h3 {
 // @media screen and (min-width: 1872px)
 @media screen and (min-width: 117em) {
 
-	header, #twoway {
-		margin: 0 $column*1;
-	}
+	//header, #twoway {
+	//	margin: 0 $column*1;
+	//}
 
-	header .wrapper {
-		width: 37.5%;
-		margin-left: 25%;
-	}
+	//header .wrapper {
+	//	width: 37.5%;
+	//	margin-left: 25%;
+	//}
 
-	#twoway .wrapper {
-		width: 25%;
-	}
+	//#twoway .wrapper {
+	//	width: 25%;
+	//}
 
-	#twoway .wrapper:first-child {
-		margin-left: 25%;
-	}
+	//#twoway .wrapper:first-child {
+	//	margin-left: 25%;
+	//}
 
 }
 
