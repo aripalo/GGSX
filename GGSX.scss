@@ -186,12 +186,11 @@ h3 {
 // Margin   | #  1   2   3   4   |   Margin
 // 5.55555% | %  25  50  75  100 | 5.55555%
 
-.full,
+.col-single,
 .row {
 	@include row;
 }
 
-.full,
 [class^=col] {
 	@include elasticGutters;
 }
