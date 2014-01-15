@@ -132,6 +132,7 @@ h3 {
 // 5.55555% | %  25  50  75  100 | 5.55555%
 
 //header, #twoway {
+.cols-8-of-8,
 .wrap {
 	margin: 0 $column;
 	padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
@@ -225,18 +226,27 @@ h3 {
 	//	width: 50%;
 	//}
 
-	.cols-6-of-8 {
-		//padding: 0 #{($line/2)/$em}em;
-		//margin: 0 $column*3 0 -1*#{($line/2)/$em}em !important;
-		//margin: 0 !important;
-		//margin-left: #{($line/2)/$em*-1}em !important;
-		//margin-right: #{($line/2)/$em*-1 + $column*3}em !important;
-		//width: 100%/8*6;
+	.row {
+		margin: 0 $column;
 	}
 
-	.cols-7-of-8 {
-		//margin: 0 $column*12 0 0 !important;
+	.row {
+		.col {
+			margin: 0;
+			padding: 0 #{($line/2)/$em}em;// Simple elastic gutters (requires box-sizing: border-box;)
+		}
+		.cols-6-of-8 {
+			float: left;
+			width: 75%;
+		}
+		.cols-2-of-8 {
+			float: left;
+			width: 25%;
+		}
 	}
+
+
+
 
 }
 
