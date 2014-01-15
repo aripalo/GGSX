@@ -1,15 +1,17 @@
 /*
 *
-*  Golden Grid System (1.0)	<http://goldengridsystem.com/>
-*  by Joni Korpi 				<http://jonikorpi.com/>
+*  Golden Grid System Extended
+*  ===========================
+*  by Ari Palo 				<http://aripalo.fi/>
+*  based on Golden Grid System <http://goldengridsystem.com/> by Joni Korpi <http://jonikorpi.com/>
 *  licensed under MIT			<http://opensource.org/licenses/mit-license.php>
 *
 */
 
 
-//
+
 // Important numbers
-//
+// -----------------
 
 $line: 24;
 $column: 100% / 18;
@@ -17,15 +19,15 @@ $font-size: 16;
 $em: $font-size * 1;
 
 
-// Import Normalize.css (via _normalize.scss symlink pointint to normalize.css git submodule)
+// Import Normalize.css
+// --------------------
+// (via _normalize.scss symlink pointint to normalize.css git submodule)
 @import 'normalize';
 
-/*
-*
-*  Margin, padding, and border resets
-*  except for form elements
-*
-*/
+
+// Margin, padding, and border resets
+// except for form elements
+// ----------------------------------
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, nav, section, menu, time, mark, audio, video, canvas {
 	margin: 0;
@@ -34,11 +36,9 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote,
 }
 
 
-/*
-*
-*  Simple fluid media
-*
-*/
+
+// Simple fluid media
+// ----------------------------------
 
 figure {
 	position: relative;
@@ -53,61 +53,76 @@ img {
 }
 
 
-/*
-*
-*	Zoomable baseline grid
-*	type size presets
-*
-*/
-
-body {
-	/* 16px / 24px */
-	font-size: $font-size / 16 * 1em;
-	line-height: #{$line / $em}em;
-}
-
-@mixin small {
+// Type size mixins
+// ----------------------------------
+@mixin small-type {
 	/* 13px / 18px */
 	font-size: #{($font-size*0.8125) / $em}em;
 	line-height: ($line*0.75) / ($font-size*0.8125) * 1em;
 }
-@mixin normal {
+
+@mixin normal-type {
 	/* 16px / 24px */
 	font-size: #{$font-size / $em}em;
 	line-height: #{$line / $em}em; /* 24 */
 }
 
-h3 {
-	@include normal;
-}
-
-@mixin large {
+@mixin large-type {
 	/* 26 / 36px */
 	font-size: #{26 / $em}em;
 	line-height: ($line*1.5) / 26 * 1em;
 }
 
-h2, h1 {
-	@include large;
-}
-
-@mixin huge {
+@mixin huge-type {
 	/* 42px / 48px */
 	font-size: #{42 / $em}em;
 	line-height: ($line*2) / 42 * 1em;
 }
 
-@mixin massive {
+@mixin massive-type {
 	/* 68px / 72px */
 	font-size: #{68 / $em}em;
 	line-height: ($line*3) / 68 * 1em;
 }
 
-@mixin gigantic {
+@mixin gigantic-type {
 	/* 110px / 120px */
 	font-size: #{110 / $em}em;
 	line-height: ($line*5) / 110 * 1em;
 }
+
+
+// Zoomable baseline grid
+// type size presets
+// ----------------------------------
+
+body {
+	@include normal-type;
+}
+
+h1,
+h2 {
+	@include large-type;
+}
+
+h3 {
+	@include normal-type;
+}
+
+
+
+
+
+// Golden Grid System (GGS) splits the screen into 18 even columns.
+// The leftmost and rightmost columns are used as the outer margins of the grid, which leaves 16 columns for use in design.
+
+// Now, 16 columns sounds a bit much for anything other than huge widescreen monitors.
+// This is where the folding, inspired by the DIN paper system and Unigrid, comes in.
+// The 16 columns can be combined, or folded, into 8 columns for tablet-sized screens, and into 4 columns for mobile-sized ones.
+// This way GGS can easily cover any screen sizes from 240 up to 2560 pixels.
+
+
+
 
 
 /*
@@ -163,7 +178,7 @@ h3 {
 }
 
 .ie h1 {
-	@include huge;
+	@include huge-type;
 	margin: (48/42*1em) 0 (24/42*1em);
 }
 
@@ -176,7 +191,7 @@ h3 {
 	}
 
 	h1 {
-		@include huge;
+		@include huge-type;
 		margin: (48/42*1em) 0 (24/42*1em);
 	}
 
