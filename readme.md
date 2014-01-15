@@ -2,7 +2,7 @@
 
 # How to install
 
-`git clone --recursive https://github.com/aripalo/Golden-Grid-System.git`
+`git clone --recursive https://github.com/aripalo/GGSX.git`
 
 
 # Golden Grid System
