@@ -1,3 +1,5 @@
+**THIS IS A WORK IN PROGRESS!!**
+
 # How to install
 
 `git clone --recursive https://github.com/aripalo/Golden-Grid-System.git`
