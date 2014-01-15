@@ -1,0 +1,74 @@
+// Most of the stuff here is adapted from: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+
+// Universal box-sizing: border-box;
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+// Note: box-sizing will not work in IE6-7
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+// Margin, padding, and border resets, except for form elements
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, nav, section, menu, time, mark, audio, video, canvas {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+// Simple fluid media
+figure {
+  position: relative;
+}
+figure img, figure object, figure embed, figure video {
+  max-width: 100%;
+  display: block;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection rule sets have to be separate.
+// Customize the background color to match your design.
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+// A better looking default horizontal rule
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+// Remove default fieldset styles.
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+// Allow only vertical resizing of textareas.
+textarea {
+    resize: vertical;
+}
