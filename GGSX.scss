@@ -148,7 +148,8 @@ h3 {
 // Mixins for grid creation
 // ------------------------
 @mixin row {
-	@include clearfix;
+	//@include clearfix;
+	clear: both;
 	margin-left: $column;
 	margin-right: $column;
 }
